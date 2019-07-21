@@ -16,7 +16,7 @@
     "Vue",
     "infinite",
     "scroll"
-  ]
+  ],
   "scripts": {
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/they-see-me-scrolling.umd.js",
