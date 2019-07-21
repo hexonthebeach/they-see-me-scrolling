@@ -1,0 +1,36 @@
+{
+  "name": "they-see-me-scrolling",
+  "version": "1.0.0",
+  "description": "Infinite scroll Vue component",
+  "main": "dist/they-see-me-scrolling.umd.js",
+  "module": "dist/they-see-me-scrolling.esm.js",
+  "unpkg": "dist/they-see-me-scrolling.min.js",
+  "browser": {
+    "./sfc": "src/they-see-me-scrolling.vue"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gigigig"
+  },
+  "keywords": [
+    "Vue",
+    "infinite",
+    "scroll"
+  ]
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/they-see-me-scrolling.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/they-see-me-scrolling.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/they-see-me-scrolling.min.js"
+  },
+  "devDependencies": {
+    "rollup": "^1.17.0",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "author": "hexonthebeach",
+  "license": "MIT"
+}
