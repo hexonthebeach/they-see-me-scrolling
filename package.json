@@ -1,6 +1,6 @@
 {
   "name": "they-see-me-scrolling",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Infinite scroll Vue component",
   "main": "dist/they-see-me-scrolling.umd.js",
   "module": "dist/they-see-me-scrolling.esm.js",

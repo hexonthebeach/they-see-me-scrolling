@@ -24,8 +24,8 @@
 
         methods: {
             handleScroll: function () {
-                /* they hating when they see me scrolling */
-                this.theyHating = window.innerHeight > this.getPosition().y
+                // they hating when they see me scrolling
+                this.theyHating = [...Array(window.innerHeight).keys()].includes( this.getPosition().y )
             },
 
             getPosition: function() {
