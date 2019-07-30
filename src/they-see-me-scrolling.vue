@@ -1,5 +1,7 @@
 <template>
-    <div ref="theySeeMeScrolling"></div>
+    <div ref="theySeeMeScrolling">
+        <slot></slot>
+    </div>
 </template>
 
 <script>
