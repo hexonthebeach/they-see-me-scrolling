@@ -1,6 +1,6 @@
 {
   "name": "they-see-me-scrolling",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Infinite scroll Vue component",
   "main": "dist/they-see-me-scrolling.umd.js",
   "module": "dist/they-see-me-scrolling.esm.js",
@@ -15,7 +15,10 @@
   "keywords": [
     "Vue",
     "infinite",
-    "scroll"
+    "scroll",
+    "vertical",
+    "horizontal",
+    "slot"
   ],
   "scripts": {
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg",

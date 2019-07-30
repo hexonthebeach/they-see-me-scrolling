@@ -3,6 +3,10 @@ Vue component for infinite scrolling
 
 It will emit an event when it scrolls into view for you to hook on to.
 
+* vertical scroll support
+* horizontal scroll support
+* slot for state visualization
+
 ## installation
 use npm to get this into your app, from the root :
 
@@ -22,7 +26,9 @@ Add this component under a list of items, make sure to give it a reference.
 
         <they-see-me-scrolling
             ref="theyHating"
-        ></they-see-me-scrolling>
+        >
+            {{ this.bool ? "😎" : "🚓💨" }}
+        </they-see-me-scrolling>
     </div>
 </template>
 
@@ -44,7 +50,7 @@ Add this component under a list of items, make sure to give it a reference.
 </script>
 ```
 
-Set up a listener for the event it will emit, and hook your logic to that.
+Set up a listener for the 'they-see-me-scrolling'-event it will emit, and hook your logic to that.
 
 ## Thanks
 @Chamillionaire

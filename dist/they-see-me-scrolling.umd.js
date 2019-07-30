@@ -8,6 +8,8 @@
     //
     //
     //
+    //
+    //
 
     var script = {
         name: "TheySeeMeScrolling",
@@ -30,8 +32,11 @@
 
         methods: {
             handleScroll: function () {
+                var position = this.getPosition();
+                
                 // they hating when they see me scrolling
-                this.theyHating = [].concat( Array(window.innerHeight).keys() ).includes( this.getPosition().y );
+                this.theyHating = [].concat( Array(window.innerHeight).keys() ).includes( position.y ) &&
+                                  [].concat( Array(window.innerWidth).keys() ).includes( position.x );
             },
 
             getPosition: function() {
@@ -221,7 +226,7 @@
       var _vm = this;
       var _h = _vm.$createElement;
       var _c = _vm._self._c || _h;
-      return _c("div", { ref: "theySeeMeScrolling" })
+      return _c("div", { ref: "theySeeMeScrolling" }, [_vm._t("default")], 2)
     };
     var __vue_staticRenderFns__ = [];
     __vue_render__._withStripped = true;
@@ -229,11 +234,11 @@
       /* style */
       var __vue_inject_styles__ = function (inject) {
         if (!inject) { return }
-        inject("data-v-4b1012e0_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"they-see-me-scrolling.vue"}, media: undefined });
+        inject("data-v-c0173ace_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"they-see-me-scrolling.vue"}, media: undefined });
 
       };
       /* scoped */
-      var __vue_scope_id__ = "data-v-4b1012e0";
+      var __vue_scope_id__ = "data-v-c0173ace";
       /* module identifier */
       var __vue_module_identifier__ = undefined;
       /* functional template */
