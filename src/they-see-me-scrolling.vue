@@ -26,8 +26,11 @@
 
         methods: {
             handleScroll: function () {
+                let position = this.getPosition();
+                
                 // they hating when they see me scrolling
-                this.theyHating = [...Array(window.innerHeight).keys()].includes( this.getPosition().y )
+                this.theyHating = [...Array(window.innerHeight).keys()].includes( position.y ) &&
+                                  [...Array(window.innerWidth).keys()].includes( position.x );
             },
 
             getPosition: function() {
@@ -43,7 +46,7 @@
                     position.x += (el.offsetLeft - el.scrollLeft + el.clientLeft);
                     position.y += (el.offsetTop - el.scrollTop + el.clientTop);
 
-                    el = el.offsetParent
+                    el = el.offsetParent;
                 }
 
                 // deal with browser quirks with body/window/document and page scroll
