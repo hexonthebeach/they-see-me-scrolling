@@ -10,31 +10,29 @@
 
         data() {
             return {
-                theyHating: false
+                theyHating: false,
+                position: {
+                    top: 0,
+                    left: 0,
+                    bottom: 0,
+                    right: 0
+                }
             }
         },
 
         created () {
-            window.addEventListener('scroll', this.handleScroll);
-            window.addEventListener('resize', this.handleScroll);
+            window.addEventListener('scroll', this.setPosition);
+            window.addEventListener('resize', this.setPosition);
         },
 
         destroyed () {
-            window.removeEventListener('scroll', this.handleScroll);
-            window.removeEventListener('resize', this.handleScroll);
+            window.removeEventListener('scroll', this.setPosition);
+            window.removeEventListener('resize', this.setPosition);
         },
 
         methods: {
-            handleScroll: function () {
-                let position = this.getPosition();
-                
-                // they hating when they see me scrolling
-                this.theyHating = [...Array(window.innerHeight).keys()].includes( position.y ) &&
-                                  [...Array(window.innerWidth).keys()].includes( position.x );
-            },
-
-            getPosition: function() {
-                let position = {
+            setPosition: function() {
+                const position = {
                     x: 0,
                     y: 0
                 };
@@ -56,7 +54,12 @@
                 position.x += (el.offsetLeft - xScroll + el.clientLeft);
                 position.y += (el.offsetTop - yScroll + el.clientTop);
 
-                return position;
+                this.position = {
+                    top: position.y,
+                    bottom: position.y + this.$refs.theySeeMeScrolling.clientHeight,
+                    left: position.x,
+                    right: position.x + this.$refs.theySeeMeScrolling.clientWidth
+                }
             }
         },
         
@@ -68,6 +71,21 @@
                 ){
                     this.$emit('they-see-me-scrolling');
                 }
+            },
+            position: function (newState, oldState) {
+                this.theyHating =
+                    (oldState.top !== newState.top &&
+                        newState.top > 0 &&
+                        newState.top < window.innerHeight) ||
+                    (oldState.bottom !== newState.bottom &&
+                        newState.bottom > 0 &&
+                        newState.bottom < window.innerHeight) ||
+                    (oldState.left !== newState.left &&
+                        newState.left > 0 &&
+                        newState.left < window.innerWidth) ||
+                    (oldState.right !== newState.right &&
+                        newState.right > 0 &&
+                        newState.right < window.innerWidth)
             }
         }
     }

@@ -13,7 +13,7 @@ use npm to get this into your app, from the root :
 `npm i they-see-me-scrolling`
 
 ## code example
-Add this component under a list of items, make sure to give it a reference.
+Add this component after or before a list of items, make sure to give it a reference.
 
 ```
 <template>
